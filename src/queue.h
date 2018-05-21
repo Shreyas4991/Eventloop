@@ -4,7 +4,7 @@
 typedef struct queue_node_t
 {   
     void *data;
-    queue_node_t *next;
+    struct queue_node_t *next;
 } queue_node_t;
 
 typedef struct

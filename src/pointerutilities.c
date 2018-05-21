@@ -1,4 +1,5 @@
 #include <pointerutilities.h>
+#include <stdlib.h>
 
 void safe_free(void **p)
 {
@@ -6,6 +7,6 @@ void safe_free(void **p)
     {
         return;
     }
-    free(*p)
+    free(*p);
     *p = NULL;
 }
