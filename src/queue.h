@@ -19,7 +19,7 @@ void destroy_queue_node(queue_node_t*);
 queue_t* create_queue();
 void destroy_queue(queue_t*);
 
-void add_to_queue(queue_t *q, void *data);
-void* get_next(queue_t *q);
-
+void add_to_queue(queue_t*, void*);
+void* get_next(queue_t*);
+void pop_queue(queue_t*);
 #endif

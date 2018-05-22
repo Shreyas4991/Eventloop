@@ -13,7 +13,7 @@ queue_node_t *create_queue_node(void *data)
 
 void destroy_queue_node(queue_node_t *node)
 {
-    safe_free(node -> data);
+    safe_free(&(node -> data)); 
     safe_free(&node);
 }
 
@@ -63,12 +63,20 @@ void add_to_queue(queue_t *q, void *data)
 }
 void* get_next(queue_t *q)
 {
-    queue_node_t *next_node;
     void *data = NULL;
     if (q -> front != NULL)
     {
+        data = q -> front -> data;
+    }
+    return data;
+}
+
+void pop_queue(queue_t *q)
+{
+    queue_node_t *next_node;
+    if(q -> front != NULL)
+    {
         next_node = q -> front;
-        data = next_node -> data;
         q -> front = q -> front -> next;
         destroy_queue_node(next_node);
         if (q -> front == NULL)
@@ -76,5 +84,4 @@ void* get_next(queue_t *q)
             q -> rear = NULL; //signals empty queue, important for is_queue_empty to work
         }
     }
-    return data;
 }

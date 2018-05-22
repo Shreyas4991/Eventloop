@@ -4,6 +4,10 @@ queue: pointerutilities
 pointerutilities:
 	$(COMPILE_COMMAND) -c pointerutilities.h pointerutilities.c
 
-build: queue
+event: queue vector pointerutilities
+	$(COMPILE_COMMAND) -c event.h event.c
 
-.PHONY: build pointerutilities queue
+
+build: event
+
+.PHONY: build pointerutilities queue vector

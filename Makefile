@@ -13,7 +13,7 @@ all: build
 
 build:
 	cd $(SOURCE_DIR) && make build
-	sudo mv src/*.o $(BUILD_DIR)
+	mv src/*.o $(BUILD_DIR)
 	find . -name *\.gch -delete
 
 clean:
