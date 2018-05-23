@@ -8,6 +8,9 @@ event: queue vector pointerutilities
 	$(COMPILE_COMMAND) -c event.h event.c
 
 
-build: event
+main: event
+	$(COMPILE_COMMAND) -c eventio.h main.c
+
+build: main
 
 .PHONY: build pointerutilities queue vector
