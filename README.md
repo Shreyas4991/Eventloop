@@ -1,5 +1,14 @@
 # EventLoop
-## WARNING: This project is incomplete
+## NOTE: This project is incomplete
+
+## Table of Contents
+* [The Idea](#the-idea)
+* [How-this-works](#how-this-works)
+* [Building it](#building-it)
+* [How to use it](#how-to-use-it)
+* [Issues to fix](#issues-to-fix)
+
+## The Idea
 Ideally event-driven code is best written in languages like javascript or with libraries. The event loop is a single threaded model. That said, I wrote this stuff primarily to 
 * Revisit low level C programming after a long time(I am a theorist).
 * Implement some fundamental concept in CS

@@ -1,6 +1,6 @@
 export CC = gcc
 export FLAGS = -w -pthread -std=c11
-export PROJECT_DIR = ~/Programs/ChatinC
+export PROJECT_DIR = $(PWD)
 export SOURCE_DIR = $(PROJECT_DIR)/src
 export BUILD_DIR = $(PROJECT_DIR)/build
 export INCLUDE_DIR = $(PROJECT_DIR)/src
