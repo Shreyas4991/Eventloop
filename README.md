@@ -45,8 +45,7 @@ It's a bit complicated at the moment since this is still a work-in-progress with
         * This is where you register your initial set of event handlers. Watching I/O actions and calling trigger on the corresponding events with a pointer to an object containing your arguments is your job as of now
 * To compile and produce the executable you need to link all the objects in build. The flag `-I src/` is essential in the compile command.
 
-Your file with all the objects in the build directory
-The file `test/testevent/sampleevmain` is a good example of working with this.
+Compile your file with all the objects in the build directory. The file `test/testevent/sampleevmain` is a good example of working with this. and it's compile command can be seen in the `Makefile` in `test/testevent`
 
 ## Issues to fix
 ### Serious:
