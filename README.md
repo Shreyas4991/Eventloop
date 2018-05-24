@@ -14,7 +14,7 @@ Ideally event-driven code is best written in languages like javascript or with l
 * Implement some fundamental concept in CS
 * Get accustomed to being systematic at writing projects again.
 
-This is a very amateur attempt as can be seen from the Makefile structure, occasional use of print statements for debugging and especially the excessive structuring up for limited functionality.
+This is a very amateur attempt as can be seen from the Makefile structure, occasional use of print statements for debugging, elaborate README and especially the excessive structuring up for limited functionality.
 
 ## How this works
 * You register events initially. Execute code sequentially and synchronously. Trigger events and have the callback corresponding to them execute on a thread on which the eventloop runs.
