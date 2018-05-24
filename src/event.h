@@ -5,10 +5,10 @@
 #include <pthread.h>
 #include <semaphore.h> 
 //globals
-extern queue_t *events_queue;
-extern pthread_mutex_t queue_mutex;
-extern sem_t queue_semaphore;
-extern int quit_event_loop_flag = 0;
+queue_t *events_queue;
+pthread_mutex_t queue_mutex;
+sem_t queue_semaphore;
+int quit_event_loop_flag;
 //globals
 
 typedef void (*callback_t)(void*);
@@ -46,4 +46,5 @@ void add_event(event_list_t *list, int event_id, callback_t *callback);
 void call_event(event_list_t *elist, int event_id, void *parameters);
 void trigger_event(int event_id, void *parameters);
 void* event_loop(event_list_t *el);
+
 #endif
