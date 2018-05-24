@@ -17,6 +17,6 @@ test:
 		./testqueue
 
 clean:
-	find . testqueue -name -delete
+	find . -name testqueue -delete
 
 .PHONY: test
