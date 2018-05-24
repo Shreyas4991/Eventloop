@@ -1,10 +1,11 @@
 # EventLoop
-
+## WARNING: This project is incomplete
 Ideally event-driven code is best written in languages like javascript or with libraries. The event loop is a single threaded model. That said, I wrote this stuff primarily to 
-* Revisit low level C programming after a long time.
+* Revisit low level C programming after a long time(I am a theorist).
 * Implement some fundamental concept in CS
-* Get accustomed to MakeFiles again.
+* Get accustomed to being systematic at writing projects again.
 
+This is a very amateur attempt as can be seen from the Makefile structure, occasional use of print statements for debugging and especially the excessive structuring up for limited functionality.
 
 ## How this works
 * You register events initially. Execute code sequentially and synchronously. Trigger events and have the callback corresponding to them execute on a thread on which the eventloop runs.
@@ -44,4 +45,4 @@ The file `test/testevent/sampleevmain` is a good example of working with this.
 * Being able to add events on the fly in evmain. requires the addition of a function to expand the allocated space for variables of type event_list_t* using realloc.
 ### Others:
 * Disappearing arguments: For now arguments supplied to callbacks disappear into a blackhole (aka get freed). This means passing values by reference is pointless. The idea was to not let the user worry about freeing pointer arguments. Clearly that isn't much help if the user wants to keep them.
-*  Return values: Again much needed. For now callbacks have to have a return type `void`
+*  Return values: Again much needed. For now callbacks have to have a return type `void`. But changing this to void* is relatively easy.
