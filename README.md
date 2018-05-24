@@ -50,8 +50,8 @@ The file `test/testevent/sampleevmain` is a good example of working with this.
 
 ## Issues to fix
 ### Serious:
-* Memory leaks in the queue data structure. Clearly I must have committed a blunder somewhere. Double freeing should not be an issue thanks to `safe_free` in src/pointerutilities.h. 
-* Being able to add events on the fly in evmain. requires the addition of a function to expand the allocated space for variables of type event_list_t* using realloc.
+* Memory leaks in the queue data structure. Clearly I must have committed a blunder somewhere. Double freeing should not be an issue thanks to `safe_free` in `src/pointerutilities.h`. 
+* Being able to add events on the fly in evmain. requires the addition of a function to expand the allocated space for variables of type `event_list_t*` using `realloc`.
 ### Others:
 * Disappearing arguments: For now arguments supplied to callbacks disappear into a blackhole (aka get freed). This means passing values by reference is pointless. The idea was to not let the user worry about freeing pointer arguments. Clearly that isn't much help if the user wants to keep them.
 *  Return values: Again much needed. For now callbacks have to have a return type `void`. But changing this to void* is relatively easy.
