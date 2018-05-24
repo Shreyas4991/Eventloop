@@ -1,7 +1,7 @@
 #include <queue.h>
 #include <pointerutilities.h>
 #include <stdlib.h>
-#include <stdio.h>
+
 queue_node_t *create_queue_node(void *data)
 {
     queue_node_t *new_node;
@@ -28,15 +28,12 @@ queue_t* create_queue()
 void destroy_queue(queue_t *q)
 {
     queue_node_t *to_be_deleted, *traverse = q -> front;
-    printf("\nDestruction of queue begins");
     while(traverse != NULL)
     {
         to_be_deleted = traverse;
         traverse = traverse -> next;
         destroy_queue_node(to_be_deleted);
-        printf("\n Destroying a queue node");
     }
-    printf("\nDestruction of queue ends");
     safe_free(&q);
 }
 

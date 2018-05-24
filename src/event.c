@@ -5,7 +5,6 @@
 #include <pthread.h>
 #include <semaphore.h>
 
-#include <stdio.h>
 
 //create and destroy individual events
 event_t* create_event(callback_t* callback)
@@ -38,15 +37,12 @@ void destroy_event_instance(event_instance_t *ei)
 void destroy_event_list(event_list_t *el)
 {
     int i;
-    printf("\nDestruction of event list begins");
     for(i = 0; i < el -> size; i++)
     {
         destroy_event(el->list[i]);
-        printf("\nDestroyed event instance %d",i);
     }
     safe_free(&(el -> list));
     safe_free(&el);
-    printf("\nDestroyed event list");
 }
 event_list_t* create_event_list(int size)
 {
@@ -96,7 +92,6 @@ void* event_loop(event_list_t *el)
         pop_queue(events_queue);
         pthread_mutex_unlock(&queue_mutex);
     }
-    printf("\nTime to wrap up\n");
     //wind up, finish the event_queue
     while(events_queue -> front != NULL)
     {
@@ -106,6 +101,5 @@ void* event_loop(event_list_t *el)
         destroy_event_instance(next_ei);
         pop_queue(events_queue);   
     }
-    printf("\n The queue's done\n");
     return NULL;
 }
